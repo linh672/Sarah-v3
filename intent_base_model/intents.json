@@ -1,0 +1,65 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": ["Hi", "Hello", "Hey", "What's up", "Howdy", "Greetings", "Hi there", "Hey there"],
+        "responses": ["Hello!", "Hi there!", "Greetings!", "Hey! How can I help you?"]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["Bye", "Goodbye", "See you", "Later", "Catch you later", "Talk to you soon"],
+        "responses": ["Goodbye!", "See you later!", "Take care!", "Bye! Have a nice day!"]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "I appreciate it", "Much obliged", "Thanks a lot"],
+        "responses": ["You're welcome!", "No problem!", "Anytime!", "Glad to help!"]
+      },
+      {
+        "tag": "time",
+        "patterns": ["What time is it?", "Tell me the time", "Current time please", "Clock", "Time now?"],
+        "responses": ["It's [time].", "Right now it's [time].", "Current time is [time]."]
+      },
+      {
+        "tag": "joke",
+        "patterns": ["Tell me a joke", "Make me laugh", "Any jokes?", "Say something funny"],
+        "responses": ["Why don't scientists trust atoms? Because they make up everything!", "I'm reading a book on anti-gravity. It's impossible to put down!"]
+      },
+      {
+        "tag": "news",
+        "patterns": ["What's the news?", "Latest headlines?", "Tell me the news", "Any updates?"],
+        "responses": ["Here are the top news stories right now...", "Let me fetch the latest headlines for you."]
+      },
+      {
+        "tag": "music",
+        "patterns": ["Play music", "I want to hear a song", "Start music", "Any good songs?", "Play something nice"],
+        "responses": ["Playing your favorite music now.", "Here's something you'll enjoy!"]
+      },
+      {
+        "tag": "alarm",
+        "patterns": ["Set an alarm", "Wake me up at 7", "Alarm for 8 AM", "Schedule alarm", "I need an alarm"],
+        "responses": ["Alarm set!", "Got it, your alarm is scheduled."]
+      },
+      {
+        "tag": "reminder",
+        "patterns": ["Remind me to call mom", "Set a reminder", "I need a reminder", "Can you remind me?", "Don't let me forget"],
+        "responses": ["Reminder set!", "I’ll remind you."]
+      },
+      {
+        "tag": "restaurant",
+        "patterns": ["Find a restaurant", "Where can I eat?", "I want food", "Suggest some dining places", "Any good places to eat?"],
+        "responses": ["Here are some restaurants nearby.", "You might like these places to eat."]
+      },
+      {
+        "tag": "translate",
+        "patterns": ["Translate hello to Spanish", "What is 'friend' in French?", "How do you say thank you in Japanese?"],
+        "responses": ["'Hello' in Spanish is 'Hola'.", "Let me translate that for you."]
+      },
+      {
+        "tag": "fact",
+        "patterns": ["Tell me a fact", "Interesting fact?", "Say something cool", "Give me a random fact"],
+        "responses": ["Did you know honey never spoils?", "Octopuses have three hearts!"]
+      }
+    ]
+  }
+  
