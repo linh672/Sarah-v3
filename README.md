@@ -1,104 +1,107 @@
-# Sarah - Voice-Controlled AI Chatbot
+# Sarah-v3
 
-**Sarah** is a voice-controlled AI chatbot that can predict house prices based on user input, tell the time and date in a specific city, provide weather updates, tell jokes, and respond to greetings. It uses a trained machine learning pipeline to make real estate predictions, and responds to spoken inputs using speech recognition and text-to-speech.
-
----
-
-## 💡 Features
-
-- 🎙️ Voice-based interface for hands-free interaction.
-- 🏡 Predict house prices based on location, income, and other features.
-- 🌍 Tell local time and date for cities around the world.
-- ⛅ Get real-time weather updates for a city.
-- 😂 Tell random jokes.other features
-- 👋 Respond to greetings, thanks, and goodbyes.
-- ✈️ Predict flight delays based on factors like airline, scheduled departure time, and other features.
----
-
-## 🧠 Technologies Used
-
-- `speech_recognition`: For capturing user voice input.
-- `pyttsx3`: For converting text to speech.
-- `joblib`: For loading the trained machine learning model pipeline.
-- `word2number`: For converting spoken numbers to numeric values.
-- `pandas`: For data handling and feature formatting.
-- `asyncio`: For async operations (e.g., weather).
-- `pyjokes`: For telling jokes.
-- Custom modules in `sarah_module`: Handles speech-to-text, text-to-speech, weather, and time.
+**Sarah-v3** is a voice-controlled AI assistant built with Python that integrates speech recognition, natural language understanding, and machine learning-based predictions. It can respond to conversational queries, tell jokes, report weather and local time, and help users predict house prices and flight delays through interactive voice-based sessions.
 
 ---
 
-## 🛠️ Setup Instructions
+## 🔧 Features
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/linh672/Sarah_v2.git
-   cd Sarah_v2
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Install Git LFS** (if not already):
-   ```bash
-   git lfs install
-   ```
-
-4. **Pull large model file:**
-   ```bash
-   git lfs pull
-   ```
-
-5. **Run the chatbot:**
-   ```bash
-   python Sarah_v2_core.py
-   ```
-
----
-
-## 🏗️ How It Works
-
-- Wake Sarah by saying **"wake up Sarah"**.
-- Ask **"how to predict house price"** to get guidance.
-- Start prediction with **"predict house price"** or **"predict flight delay"**.
-- Sarah will ask for input feature-by-feature. You respond with values like:
-
-  ```
-  median income is thirty thousand 
-  ocean proximity is near ocean
-  ```
-
-- Sarah will process and make a prediction using a trained model pipeline.
-- You can also say things like:
-
-  - **"What's the time in New York?"**
-  - **"Tell me the weather in Tokyo"**
-  - **"Tell me a joke"**
-  - **"Goodbye"**
+* 🗣️ **Speech Recognition**: Converts spoken input to text using `recognize_speech()`.
+* 🔊 **Text-to-Speech**: Provides verbal responses via `speak_response()`.
+* 🧠 **Intent Classification**: Uses a neural network model trained on custom intents to understand general-purpose questions.
+* 🏠 **House Price Prediction**: Collects inputs interactively and uses a trained regression model to estimate house prices.
+* ✈️ **Flight Delay Prediction**: Interactively collects flight details and predicts whether a flight will be delayed using a classification model.
+* 🌤️ **Weather Reports**: Provides current weather information for specified cities.
+* 🕒 **Time & Date Lookup**: Tells the current time or date in any specified city.
+* 😂 **Jokes**: Tells a random joke using the `pyjokes` library.
+* 👋 **Conversational Flow**: Handles greetings, thanks, and goodbyes gracefully.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-Sarah_v2/
-├── Sarah_v2_core.py             # Voice prediction logic
-├── sarah_module/
-│   ├── speech_to_text.py
-│   ├── text_to_speech.py
-│   ├── basic_module.py
-│   └── ...
+Sarah-v3/
+│
 ├── house_price_predictor/
-│   ├── _house_price_model.pkl   # Trained model (Git LFS)
-├── flight_delay_predictor                               
-│   ├── _flight_delay_model.pkl
-│   ├── _label_encoder.pkl
+│   └── _house_price_model.pkl         # Trained regression model with pipeline
+│
+├── flight_delay_predictor/
+│   ├── _flight_delay_model.pkl        # Trained classification model
+│   └── _label_encoder.pkl             # Label encoder for predictions
+│
+├── intent_base_model/
+│   ├── Sarah_v3_assistant.py          # Intent classification logic
+│   ├── Sarah_v3_model.pth             # Trained neural network model
+│   ├── dimensions.json                # Input/output dimensions
+│   └── intents.json                   # User intents and responses
+│
 ├── sarah_module/
-│   ├── speech_to_text.py
-│   ├── text_to_speech.py
-│   ├── basic_module.py
-│   └── ...
-└── README.md
+│   ├── speech_to_text.py              # Speech recognition functions
+│   ├── text_to_speech.py              # TTS functions
+│   └── basic_module.py                # Weather and time utilities
+│
+└── main.py                            # Core logic (your provided script)
 ```
+
+---
+
+## 📦 Requirements
+
+Install the required libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+**Typical dependencies include:**
+
+* `speechrecognition`
+* `pyttsx3`
+* `pyjokes`
+* `joblib`
+* `pandas`
+* `scikit-learn`
+* `torch`
+* `word2number`
+* `requests`
+* `asyncio`
+
+---
+
+## 🚀 Running the Assistant
+
+Run the assistant with:
+
+```bash
+python main.py
+```
+
+Then, speak commands like:
+
+* “Hi Sarah” or “Wake up Sarah”
+* “Predict house price”
+* “Predict flight delay”
+* “What’s the weather in London?”
+* “What time is it in New York?”
+* “Tell me a joke”
+* “Thank you” or “Goodbye”
+
+---
+
+## 🧠 Machine Learning Capabilities
+
+* **House Price Model**: Predicts based on features like location, number of rooms, income, and proximity to ocean.
+* **Flight Delay Model**: Predicts based on date/time, airline, and schedule details.
+* Both use pre-trained pipelines stored as `.pkl` files for direct use without retraining.
+
+---
+
+## 🗂 Notes
+
+* Ensure your microphone is set up and accessible by the system.
+* The assistant handles inputs in a guided manner, asking for each required feature one by one.
+* Make sure the model and data files are located in the correct paths as referenced in the code.
+
+
+
